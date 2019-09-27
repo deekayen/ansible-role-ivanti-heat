@@ -5,38 +5,6 @@ cache: pip
 
 matrix:
   include:
-    - name: "Ansible 2.1.6.0 on Trusty"
-      python: 2.7
-      dist: trusty
-      install:
-        - sudo pip install -U ansible==2.1.6.0
-        - sudo ansible-galaxy install --force -r tests/requirements.yml
-        - sudo pip install ansible-lint
-        - sudo pip install ansible-review
-    - name: "Ansible 2.2.3.0 on Trusty"
-      python: 2.7
-      dist: trusty
-      install:
-        - sudo pip install -U ansible==2.2.3.0
-        - sudo ansible-galaxy install --force -r tests/requirements.yml
-        - sudo pip install ansible-lint
-        - sudo pip install ansible-review
-    - name: "Ansible 2.3.3.0 on Trusty"
-      python: 2.7
-      dist: trusty
-      install:
-        - sudo pip install -U ansible==2.3.3.0
-        - sudo ansible-galaxy install --force -r tests/requirements.yml
-        - sudo pip install ansible-lint
-        - sudo pip install ansible-review
-    - name: "Ansible 2.4.6.0 on Trusty"
-      python: 2.7
-      dist: trusty
-      install:
-        - sudo pip install -U ansible==2.4.6.0
-        - sudo ansible-galaxy install --force -r tests/requirements.yml
-        - sudo pip install ansible-lint
-        - sudo pip install ansible-review
     - name: "Ansible PPA 2.5.0 on Precise"
       python: 2.7
       dist: precise
@@ -78,7 +46,7 @@ matrix:
       before_install:
         - sudo add-apt-repository ppa:ansible/ansible -y
         - sudo apt-get update -q
-        - sudo apt-get install ansible=2.8.5 -y
+        - sudo apt-get install ansible=2.8.5-1ppa~trusty -y
       install:
         - ansible-galaxy install --force -r tests/requirements.yml
         - pip install ansible-lint
