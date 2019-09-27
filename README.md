@@ -1,6 +1,8 @@
 Ivanti HEAT
 ===========
 
+[![Build Status](https://travis-ci.org/deekayen/ansible-role-ivanti-heat.svg?branch=master)](https://travis-ci.org/deekayen/ansible-role-ivanti-heat)
+
 Install [Ivanti HEAT](https://www.ivanti.com/company/history/heat-software) using a nuget package for Windows.
 
 Requirements
