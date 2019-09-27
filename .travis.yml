@@ -5,13 +5,13 @@ cache: pip
 
 matrix:
   include:
-    - name: "Ansible PPA 2.5.0 on Precise"
+    - name: "Ansible PPA 2.8.5 on Trusty"
       python: 2.7
-      dist: precise
+      dist: trusty
       before_install:
         - sudo add-apt-repository ppa:ansible/ansible -y
         - sudo apt-get update -q
-        - sudo apt-get install ansible=2.5.0 -y
+        - sudo apt-get install ansible=2.8.5-1ppa~trusty -y
       install:
         - ansible-galaxy install --force -r tests/requirements.yml
         - pip install ansible-lint
@@ -40,17 +40,6 @@ matrix:
         - ansible-galaxy install --force -r tests/requirements.yml
         - pip3 install ansible-lint
         - pip3 install ansible-review
-    - name: "Ansible PPA 2.8.5 on Trusty"
-      python: 2.7
-      dist: trusty
-      before_install:
-        - sudo add-apt-repository ppa:ansible/ansible -y
-        - sudo apt-get update -q
-        - sudo apt-get install ansible=2.8.5-1ppa~trusty -y
-      install:
-        - ansible-galaxy install --force -r tests/requirements.yml
-        - pip install ansible-lint
-        - pip install ansible-review
     - name: "Ansible 2.8.5 on Xenial"
       python: 3.6
       dist: xenial
