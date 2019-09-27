@@ -40,12 +40,10 @@ matrix:
     - name: "Ansible PPA 2.5.0 on Precise"
       python: 2.7
       dist: precise
-      addons:
-        apt:
-          sources:
-            - ppa:ansible/ansible
-          packages:
-            - ansible
+      before_install:
+        - sudo add-apt-repository ppa:ansible/ansible -y
+        - sudo apt-get update -q
+        - sudo apt-get install ansible=2.5.0 -y
       install:
         - ansible-galaxy install --force -r tests/requirements.yml
         - pip install ansible-lint
@@ -77,17 +75,14 @@ matrix:
     - name: "Ansible PPA 2.8.5 on Trusty"
       python: 2.7
       dist: trusty
-      addons:
-        apt:
-          sources:
-            - ppa:ansible/ansible
-          packages:
-            - ansible=2.8.5
+      before_install:
+        - sudo add-apt-repository ppa:ansible/ansible -y
+        - sudo apt-get update -q
+        - sudo apt-get install ansible=2.8.5 -y
       install:
-        - pip3 install -U ansible==2.8.5
         - ansible-galaxy install --force -r tests/requirements.yml
-        - pip3 install ansible-lint
-        - pip3 install ansible-review
+        - pip install ansible-lint
+        - pip install ansible-review
     - name: "Ansible 2.8.5 on Xenial"
       python: 3.6
       dist: xenial
@@ -99,8 +94,11 @@ matrix:
     - name: "Ansible latest on Bionic"
       python: 3.7
       dist: bionic
+      before_install:
+        - sudo add-apt-repository ppa:ansible/ansible -y
+        - sudo apt-get update -q
+        - sudo apt-get install ansible -y
       install:
-        - pip3 install -U ansible
         - ansible-galaxy install --force -r tests/requirements.yml
         - pip3 install ansible-lint
         - pip3 install ansible-review
