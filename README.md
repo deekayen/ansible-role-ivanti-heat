@@ -1,7 +1,7 @@
 Ivanti HEAT
 ===========
 
-Install Ivanti HEAT using a nuget package for Windows.
+Install [Ivanti HEAT](https://www.ivanti.com/company/history/heat-software) using a nuget package for Windows.
 
 Requirements
 ------------
