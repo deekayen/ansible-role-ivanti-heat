@@ -8,39 +8,35 @@ matrix:
     - name: "Ansible 2.2.3.0 on Trusty"
       python: 2.7
       dist: trusty
-      sudo: true
       install:
-        - pip install -U ansible==2.2.3.0
-        - ansible-galaxy install --force -r tests/requirements.yml
-        - pip install ansible-lint
-        - pip install ansible-review
+        - sudo pip install -U ansible==2.2.3.0
+        - sudo ansible-galaxy install --force -r tests/requirements.yml
+        - sudo pip install ansible-lint
+        - sudo pip install ansible-review
     - name: "Ansible 2.3.3.0 on Trusty"
       python: 2.7
       dist: trusty
-      sudo: true
       install:
-        - pip install -U ansible==2.3.3.0
+        - sudo pip install -U ansible==2.3.3.0
         - sudo ansible-galaxy install --force -r tests/requirements.yml
-        - pip install ansible-lint
-        - pip install ansible-review
+        - sudo pip install ansible-lint
+        - sudo pip install ansible-review
     - name: "Ansible 2.3.3.0 on Trusty"
       python: 2.7
       dist: trusty
-      sudo: true
       install:
-        - pip install -U ansible==2.3.3.0
+        - sudo pip install -U ansible==2.3.3.0
         - sudo ansible-galaxy install --force -r tests/requirements.yml
-        - pip install ansible-lint
-        - pip install ansible-review
+        - sudo pip install ansible-lint
+        - sudo pip install ansible-review
     - name: "Ansible 2.4.6.0 on Trusty"
       python: 2.7
       dist: trusty
-      sudo: true
       install:
-        - pip install -U ansible==2.4.6.0
+        - sudo pip install -U ansible==2.4.6.0
         - sudo ansible-galaxy install --force -r tests/requirements.yml
-        - pip install ansible-lint
-        - pip install ansible-review
+        - sudo pip install ansible-lint
+        - sudo pip install ansible-review
     - name: "Ansible PPA 2.5.0 on Precise"
       python: 2.7
       dist: precise
