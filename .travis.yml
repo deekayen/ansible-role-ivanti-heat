@@ -10,7 +10,7 @@ matrix:
       dist: trusty
       install:
         - pip install -U ansible==2.1.6.0
-        - ansible-galaxy install --force -r tests/requirements.yml
+        - sudo ansible-galaxy install --force -r tests/requirements.yml
         - pip install ansible-lint
         - pip install ansible-review
     - name: "Ansible 2.2.3.0 on Trusty"
@@ -18,7 +18,7 @@ matrix:
       dist: trusty
       install:
         - pip install -U ansible==2.2.3.0
-        - ansible-galaxy install --force -r tests/requirements.yml
+        - sudo ansible-galaxy install --force -r tests/requirements.yml
         - pip install ansible-lint
         - pip install ansible-review
     - name: "Ansible 2.3.3.0 on Trusty"
@@ -26,7 +26,7 @@ matrix:
       dist: trusty
       install:
         - pip install -U ansible==2.3.3.0
-        - ansible-galaxy install --force -r tests/requirements.yml
+        - sudo ansible-galaxy install --force -r tests/requirements.yml
         - pip install ansible-lint
         - pip install ansible-review
     - name: "Ansible 2.3.3.0 on Trusty"
@@ -34,7 +34,7 @@ matrix:
       dist: trusty
       install:
         - pip install -U ansible==2.3.3.0
-        - ansible-galaxy install --force -r tests/requirements.yml
+        - sudo ansible-galaxy install --force -r tests/requirements.yml
         - pip install ansible-lint
         - pip install ansible-review
     - name: "Ansible 2.4.6.0 on Trusty"
@@ -42,7 +42,7 @@ matrix:
       dist: trusty
       install:
         - pip install -U ansible==2.4.6.0
-        - ansible-galaxy install --force -r tests/requirements.yml
+        - sudo ansible-galaxy install --force -r tests/requirements.yml
         - pip install ansible-lint
         - pip install ansible-review
     - name: "Ansible 2.5.15 on Xenial"
