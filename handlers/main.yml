@@ -1,0 +1,7 @@
+---
+
+- name: start emss
+  win_service:
+    name: EMSS Agent
+    state: started
+    start_mode: auto

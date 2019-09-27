@@ -1,0 +1,74 @@
+---
+
+language: python
+cache: pip
+
+matrix:
+  include:
+    - name: "Ansible 2.1.6.0 on Trusty"
+      python: 2.7
+      dist: trusty
+      install:
+        - pip install -U ansible==2.1.6.0
+    - name: "Ansible 2.2.3.0 on Trusty"
+      python: 2.7
+      dist: trusty
+      install:
+        - pip install -U ansible==2.2.3.0
+    - name: "Ansible 2.3.3.0 on Trusty"
+      python: 2.7
+      dist: trusty
+      install:
+        - pip install -U ansible==2.3.3.0
+    - name: "Ansible 2.3.3.0 on Trusty"
+      python: 2.7
+      dist: trusty
+      install:
+        - pip install -U ansible==2.3.3.0
+    - name: "Ansible 2.4.6.0 on Trusty"
+      python: 2.7
+      dist: trusty
+      install:
+        - pip install -U ansible==2.4.6.0
+    - name: "Ansible 2.5.15 on Xenial"
+      python: 3.6
+      dist: xenial
+      install:
+        - pip install -U ansible==2.5.15
+    - name: "Ansible 2.6.19 on Xenial"
+      python: 3.6
+      dist: xenial
+      install:
+        - pip install -U ansible==2.6.19
+    - name: "Ansible 2.7.13 on Xenial"
+      python: 3.6
+      dist: xenial
+      install:
+        - pip install -U ansible==2.7.13
+    - name: "Ansible 2.8.5 on Xenial"
+      python: 3.6
+      dist: xenial
+      install:
+        - pip install -U ansible==2.8.5
+    - name: "Ansible latest on Bionic"
+      python: 3.7
+      dist: bionic
+      install:
+        - pip install -U ansible
+
+install:
+  - ansible-galaxy install --force -r tests/requirements.yml
+  - pip install ansible-lint
+  - pip install ansible-review
+
+script:
+  - ansible --version
+  - ansible-lint --version
+  - ansible-review --version
+  - ansible-galaxy --version
+  - ansible-lint -v .
+  - git ls-files | grep -Ei '^[^[:punct:]].+.(yaml|yml)$' | xargs ansible-review -q
+  - ansible-playbook -i tests/inventory --syntax-check tests/test.yml
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/

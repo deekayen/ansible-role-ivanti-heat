@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>Ivanti.HEAT</id>
+    <title>Ivanti HEAT Agent 64-bit Windows (Install)</title>
+    <version>8.5.0.41</version>
+    <authors>David Norman</authors>
+    <owners>Ivanti</owners>
+    <projectUrl>https://www.ivanti.com/company/history/heat-software</projectUrl>
+    <iconUrl>https://static.ivanti.com/sites/marketing/media/images/logos/ivanti-logo-header-black-red-accent.svg</iconUrl>
+    <description>
+Install Ivanti HEAT Agent on Windows
+#### Package Parameters
+The following package parameters can be set:
+
+ * `/HeatServerAddress:` - determines what server to point to for configuration - defaults to "heat.example.com"
+ * `/HeatModuleList:` - What modules to install - defaults to "VulnerabilityManagement"
+
+To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
+To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
+
+    </description>
+    <tags>Ivanti,heat</tags>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

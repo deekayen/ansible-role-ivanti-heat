@@ -1,0 +1,6 @@
+---
+
+chocolatey_source: https://nexus.example.com/repository/nuget-hosted/
+
+heat_serveraddress: "heat.example.com"
+heat_modulelist: "VulnerabilityManagement"

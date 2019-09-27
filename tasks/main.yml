@@ -1,0 +1,23 @@
+---
+
+- name: Check for existing agent installation.
+  win_stat:
+    path: "{{ ivanti_heat_lmagent }}"
+  register: ivanti_heat_file
+
+- debug:
+    var: ivanti_heat_file
+    verbosity: 2
+
+- name: Install Ivanti HEAT.
+  win_chocolatey:
+    name: Ivanti.HEAT
+    source: "{{ chocolatey_source }}"
+    params: "/HeatServerAddress:{{ heat_serveraddress }} /HeatModuleList:{{ heat_modulelist }}"
+    state: present
+  become: yes
+  become_method: runas
+  notify: start emss
+  when: not ivanti_heat_file.stat.exists
+  tags:
+    - install

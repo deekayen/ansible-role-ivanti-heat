@@ -1,0 +1,20 @@
+---
+
+galaxy_info:
+  role_name: ivanti_heat
+  author: David Norman
+  description: Install Ivanti HEAT agent.
+  issue_tracker_url: https://github.com/deekayen/ansible-role-ivanti-heat/issues
+
+  license: BSD-3-Clause
+
+  min_ansible_version: 2.1
+  platforms:
+  - name: Windows
+    versions:
+    - all
+  galaxy_tags:
+  - windows
+
+dependencies:
+  - { role: deekayen.chocolatey }
