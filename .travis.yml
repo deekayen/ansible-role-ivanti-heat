@@ -8,7 +8,6 @@ matrix:
     - name: "Ansible latest on Focal"
       dist: focal
       before_install:
-        - sudo add-apt-repository ppa:ansible/ansible -y
         - sudo apt-get update -q
         - sudo apt-get install ansible -y
       install:
