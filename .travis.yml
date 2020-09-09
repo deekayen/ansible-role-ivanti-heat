@@ -5,9 +5,10 @@ cache: pip
 
 matrix:
   include:
-    - name: "Ansible latest on Focal"
-      dist: focal
+    - name: "Ansible latest on Bionic"
+      dist: bionic
       before_install:
+        - sudo apt-add-repository ppa:ansible/ansible -y
         - sudo apt-get update -q
         - sudo apt-get install ansible -y
       install:
