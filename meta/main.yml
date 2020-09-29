@@ -21,4 +21,4 @@ galaxy_info:
     - security
 
 dependencies:
-  - { role: deekayen.chocolatey }
+  - deekayen.chocolatey
