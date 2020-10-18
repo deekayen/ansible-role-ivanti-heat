@@ -1,7 +1,7 @@
+[![Build Status](https://travis-ci.org/deekayen/ansible-role-ivanti-heat.svg?branch=main)](https://travis-ci.org/deekayen/ansible-role-ivanti-heat) [![Project Status: Unsupported – The project has reached a stable, usable state but the author(s) have ceased all work on it. A new maintainer may be desired.](https://www.repostatus.org/badges/latest/unsupported.svg)](https://www.repostatus.org/#unsupported)
+
 Ivanti HEAT
 ===========
-
-[![Build Status](https://travis-ci.org/deekayen/ansible-role-ivanti-heat.svg?branch=master)](https://travis-ci.org/deekayen/ansible-role-ivanti-heat)
 
 Install [Ivanti HEAT](https://www.ivanti.com/company/history/heat-software) using a nuget package for Windows.
 
