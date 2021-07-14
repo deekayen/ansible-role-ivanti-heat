@@ -2,6 +2,7 @@
 
 galaxy_info:
   role_name: ivanti_heat
+  namespace: deekayen
   author: David Norman
   description: Install Ivanti HEAT agent from a self-hosted nuget package.
 

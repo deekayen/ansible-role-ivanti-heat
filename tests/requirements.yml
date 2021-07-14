@@ -1,3 +1,0 @@
----
-- src: git+https://github.com/deekayen/ansible-role-ivanti-heat.git
-  name: deekayen.ivanti_heat

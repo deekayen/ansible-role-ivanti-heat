@@ -5,7 +5,8 @@
     path: "{{ ivanti_heat_lmagent }}"
   register: ivanti_heat_file
 
-- debug:
+- name: "Debug: Existing agent installation status."
+  debug:
     var: ivanti_heat_file
     verbosity: 2
 
