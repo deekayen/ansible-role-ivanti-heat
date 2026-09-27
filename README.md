@@ -7,7 +7,7 @@ Install [Ivanti HEAT](https://www.ivanti.com/company/history/heat-software) usin
 Requirements
 ------------
 
-Microsoft Windows 2008+
+Microsoft Windows Server 2016 or newer
 
 Variable Defaults
 -----------------

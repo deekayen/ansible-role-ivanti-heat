@@ -1,0 +1,16 @@
+---
+- name: Assert chocolatey_source is an HTTP(S) URL.
+  ansible.builtin.assert:
+    that:
+      - chocolatey_source is match('^https?://')
+    fail_msg: "chocolatey_source must be the http(s) URL of a NuGet feed, got: {{ chocolatey_source }}"
+    quiet: true
+
+- name: Assert the HEAT server and module list are set.
+  ansible.builtin.assert:
+    that:
+      - heat_serveraddress | length > 0
+      - heat_modulelist | length > 0
+      - "' ' not in heat_serveraddress"
+    fail_msg: heat_serveraddress (a host name) and heat_modulelist must be non-empty.
+    quiet: true

@@ -1,24 +1,28 @@
 ---
+- name: Validate role variables.
+  ansible.builtin.import_tasks: assert.yml
+  tags:
+    - always
 
 - name: Check for existing agent installation.
-  win_stat:
+  ansible.windows.win_stat:
     path: "{{ ivanti_heat_lmagent }}"
   register: ivanti_heat_file
 
 - name: "Debug: Existing agent installation status."
-  debug:
+  ansible.builtin.debug:
     var: ivanti_heat_file
     verbosity: 2
 
 - name: Install Ivanti HEAT.
-  win_chocolatey:
+  chocolatey.chocolatey.win_chocolatey:
     name: Ivanti.HEAT
     source: "{{ chocolatey_source }}"
-    params: "/HeatServerAddress:{{ heat_serveraddress }} /HeatModuleList:{{ heat_modulelist }}"
+    package_params: "/HeatServerAddress:{{ heat_serveraddress }} /HeatModuleList:{{ heat_modulelist }}"
     state: present
-  become: yes
-  become_method: runas
-  notify: start emss
+  become: true
+  become_method: ansible.builtin.runas
+  notify: Start the EMSS agent.
   when: not ivanti_heat_file.stat.exists
   tags:
     - install

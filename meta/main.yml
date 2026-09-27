@@ -1,8 +1,7 @@
 ---
-
 galaxy_info:
-  role_name: ivanti_heat
   namespace: deekayen
+  role_name: ivanti_heat
   author: David Norman
   description: Install Ivanti HEAT agent from a self-hosted nuget package.
 
@@ -10,18 +9,19 @@ galaxy_info:
   issue_tracker_url: https://github.com/deekayen/ansible-role-ivanti-heat/issues
 
   license: BSD-3-Clause
+  min_ansible_version: "2.15"
 
-  min_ansible_version: 2.1
   platforms:
     - name: Windows
       versions:
-        - 2008R2
-        - 2012R2
-        - 2016
+        - "2016"
+        - "2019"
+        - "2022"
+
   galaxy_tags:
     - windows
     - ivanti
     - security
 
 dependencies:
-  - name: deekayen.chocolatey
+  - role: deekayen.chocolatey

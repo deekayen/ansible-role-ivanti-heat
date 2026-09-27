@@ -1,0 +1,7 @@
+---
+roles:
+  - name: deekayen.chocolatey
+
+collections:
+  - name: ansible.windows
+  - name: chocolatey.chocolatey

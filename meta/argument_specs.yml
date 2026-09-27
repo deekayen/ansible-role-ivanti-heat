@@ -1,0 +1,23 @@
+---
+argument_specs:
+  main:
+    short_description: Install the Ivanti HEAT agent from a NuGet feed.
+    description:
+      - Installs the Ivanti HEAT (EMSS) agent with Chocolatey from a
+        self-hosted NuGet feed when it is not already installed, then
+        starts the agent service.
+    author:
+      - David Norman
+    options:
+      chocolatey_source:
+        type: str
+        default: https://nexus.example.com/repository/nuget-hosted/
+        description: NuGet feed that hosts the Ivanti.HEAT package.
+      heat_serveraddress:
+        type: str
+        default: heat.example.com
+        description: HEAT server the agent reports to.
+      heat_modulelist:
+        type: str
+        default: VulnerabilityManagement
+        description: HEAT modules to install with the agent.
